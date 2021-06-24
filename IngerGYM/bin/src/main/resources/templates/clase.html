@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+
+
+<body>
+	<div align = "center">	
+	<br>
+	<br>
+
+	<p>Clases disponibles:</p>
+	<ul>
+	{{#clasesDisponibles}}
+		
+		<li>
+		<p>Clase: {{tipo}} ---- dia: {{dia}} ---- hora: {{hora}}</p>
+		</li>
+		
+	{{/clasesDisponibles}}
+	</ul>
+	<br>
+	<form action="suscribirse" method="post">
+		<br>
+		<br>
+		<p>Indique el nombre de la clase a la que quiere inscribirse: </p>
+		<input type='text' name='nombres'/>
+		<br>
+		<br>
+		<input type='submit' value='Suscribirse'/>
+	</form>
+		<br>
+	<form action="/bienvenido" method="get">
+		<input type='submit' value='Volver'/>
+	</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+
+
+<body>
+	<div align = "center">	
+	<br>	
+	<br>
+	<br>
+
+	<p>Las clases a las que está suscrito:</p>
+	<ul>
+	{{#clases}}
+		
+		<li>
+		<p>Clase: {{tipo}} ---- dia: {{dia}} ---- hora: {{hora}}</p>
+		</li>
+		
+	{{/clases}}
+	</ul>
+	
+	<br>
+	<br>
+	
+	<form action="/bienvenido" method="get">
+		<input type='submit' value='Volver'/>
+	</form>
+	</div>
+</body>
+</html>

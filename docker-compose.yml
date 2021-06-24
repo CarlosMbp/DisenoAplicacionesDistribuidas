@@ -1,0 +1,58 @@
+
+services:
+
+  mysql-standalone:
+    image: 'mysql:8'
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=posts
+      - MYSQL_USER=sa
+      - MYSQL_PASSWORD=1234
+	volumes:
+      - ./esquemaMySQL/data.sql:/docker-entrypoint-initdb.d/esquemaMySQL.sql
+    restart: always
+ 
+  ingergym1:
+    build: ./IngerGYM
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-standalone:3306/posts?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: "sa"
+      SPRING_DATASOURCE_PASSWORD: "1234"
+    ports:
+      - "8085:8443"
+    depends_on:
+      - mysql-standalone
+    restart: on-failure
+
+  ingergym2:
+    build: ./IngerGYM
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-standalone:3306/posts?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: "sa"
+      SPRING_DATASOURCE_PASSWORD: "1234"
+    ports:
+      - "8086:8443"
+    depends_on:
+      - mysql-standalone
+    restart: on-failure
+
+  internal-service:
+    build: ./internal_service
+    depends_on:
+      -  ingergym1
+      -  ingergym2
+    restart: on-failure
+
+  lb:
+    image: 'haproxy:1.9.6'
+    ports:
+      - "8443:443"
+      - "8404:8404"
+
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ./haproxy/ssl.pem:/usr/local/etc/ssl/ssl.pem:ro
+    depends_on:
+      - ingergym1
+      - ingergym2
+    restart: unless-stopped

@@ -1,0 +1,31 @@
+<html>
+
+
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<div align = "center"> 
+	<h1>PISCINA</h1>
+	<br>
+	<p>Nado libre</p>
+	
+	<form action=reservarPiscina method="post">
+		
+		<p align="center">Dia: </p>	
+		<input type='number' name='dia' min="1" max="7"/>
+		<p>Hora:(formato 24h)</p>
+		<input type='number' name='hora' min="9" max="22"/>
+		<br>
+		<br>
+		<br>
+		<input type='submit' value='Reservar'/>
+	</form>
+	<br>
+	<br>
+	<form action="salas" method="post">
+		<input type='submit' value='Volver'/>
+	</form>
+	</div>
+</body>
+</html>

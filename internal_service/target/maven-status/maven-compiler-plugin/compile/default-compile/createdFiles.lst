@@ -1,0 +1,4 @@
+servicioInterno\InternalApplication.class
+servicioInterno\MailService.class
+servicioInterno\Message.class
+servicioInterno\MailController.class

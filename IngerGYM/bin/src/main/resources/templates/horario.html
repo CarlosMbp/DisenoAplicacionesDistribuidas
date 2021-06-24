@@ -1,0 +1,26 @@
+<html>
+
+
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+
+	<div align = "center">
+	<center><h1>HORARIO</h1></center>
+	<p>Horario de clases disponibles:</p>
+	<ul>
+	{{#clasesDisponibles}}
+		
+		<li>
+		<p>Clase: {{tipo}} ---- dia: {{dia}} ---- hora: {{hora}}</p>
+		</li>
+		
+	{{/clasesDisponibles}}
+	</ul>
+	
+	<br>
+	<a href="/">Volver</a>
+	</div>
+</body>
+</html>

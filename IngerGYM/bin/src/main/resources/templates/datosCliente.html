@@ -1,0 +1,33 @@
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+</head>
+
+<body>
+	<div align = "center">
+	<h1>Clases en las que esta apuntada el cliente</h1>
+	<ul>
+	{{#clases}}
+		
+		<li>
+		<p>Clase: {{tipo}} ---- dia: {{dia}} ---- hora: {{hora}}</p>
+		</li>
+		
+	{{/clases}}
+	</ul>
+	
+	
+	<br>
+	<a href="/usuariosDisponibles">Volver a usuarios</a>
+	<br>
+	<br>
+	<a href="/clientes/{{id}}/darDeBaja">Eliminar usuario</a>
+	<br>
+	<br>
+	<form action="/bienvenido" method="get">
+			<input type='submit' value='Volver a inicio'/>
+	</form>
+	</div>
+</body>
+</html>
