@@ -4,7 +4,12 @@
 
 
 ## Descripción
-La aplicación web simularia la gestión de un gimnasio y brindaría la oportunidad de elegir a sus clientes los horarios y las clases a las que quieren acceder respetando las medidas de aforo y sanidad impuestas. 
+
+IngerGym es un pequeño proyecto realizado para la asignatura "𝐀𝐩𝐥𝐢𝐜𝐚𝐜𝐢𝐨𝐧𝐞𝐬 𝐝𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐢𝐝𝐚𝐬".
+
+La aplicación web simularia la gestión de un gimnasio y brindaría la oportunidad de elegir a sus clientes los horarios y las clases a las que quieren acceder respetando las medidas de aforo y sanidad impuestas. Utilizamos diferentes técnicas, como podrían ser Spring Boot, Spring Security y comunicación mediante API Rest. Consta de una base de datos MySQL, un balanceador de carga HAProxy.
+
+Todos los servicios mencionados, se encuentran en contenedores Docker, englobados con Docker Compose para un despliegue más sencillo.
 
 ## Temática: 
 
