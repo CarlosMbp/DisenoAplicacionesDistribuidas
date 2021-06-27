@@ -20,21 +20,6 @@ Ver horarios de clases, como contactar con el gimnasio, ver tarifas , inscribirt
 - Privadas:
 Ver tu propio horario, seleccionar clases, disponibilidad de salas/clases, ver profesores/monitores, ver pistas disponibles, darte de baja.
 
-## Entidades:
-
-- PERSONA(id VARCHAR2(25), contraseña VARCHAR2(25),edad NUMBER(2),situacion_Laboral VARCHAR2(25),Rol VARCHAR2(25),Tarifa VARCHAR2(25));
-
-- SALAS(AforoMax NUMBER(3),Horarios VARCHAR2(25),TipoSala VARCHAR2(25),numSala NUMBER(3));
-
-- CLASES(AforoMax NUMBER(3),Horarios VARCHAR2(25),TipoSala VARCHAR2(25),profesor VARCHAR2(25),numSala NUMBER(3));
-(Se relaciona con "SALAS" mediante AforoMax y numSala que los hereda de ella.)
-
-- OPINION(id VARCHAR2(25),Texto VARCHAR2(25));
-
-
-- Tarifa(edad NUMBER(2),precio NUMBER(2),id VARCHAR2(25));
-(Se relaciona con persona para poder llevar un control de quien hace sugerencias en este apartado.)
-
 ## Funcionalidad de servicio interno:
 El servicio interno se encarga enviar por correo las confirmaciones de registro y de reserva de clases. 
 
